@@ -1,6 +1,6 @@
 import Employee from "../Models/EmployeeModel.js";
 
-//create new employee
+// create new employee
 
 const store = async (req, res) => {
   try {
@@ -11,7 +11,7 @@ const store = async (req, res) => {
       jobTitle: jobTitle,
       department: department,
     });
-    // console.log("mesage added", data);
+    
     if (data)
       return res.status(200).json({ msg: "Employee added successfully." });
     else
@@ -23,7 +23,7 @@ const store = async (req, res) => {
   }
 };
 
-//index method
+// list of all Employess
 const index = async (req, res) => {
   try {
     const employees = await Employee.find();
@@ -40,7 +40,7 @@ const index = async (req, res) => {
 
 
 
-//show employee
+// particular employee details
 const getemployes = async (req, res) => {
 
 
@@ -59,7 +59,8 @@ const getemployes = async (req, res) => {
   }
 };
 
-//update
+
+// update the employee details
 const update = async (req, res) => {
   try {
     const employeeId = req.params.id;
@@ -86,7 +87,7 @@ const update = async (req, res) => {
   }
 };
 
-//remove
+// delete the employee data in DB
 const deletedEmployee = async (req, res) => {
   try {
     const employeeId = req.params.id;
